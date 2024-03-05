@@ -1,0 +1,11 @@
+<ul class="collection">
+     <% books.forEach(function(books) { %>
+        <li class="collection-item avatar">
+            <img src=<%= books.img %>  alt="" class="circle">
+            <span class="title"><%= books.name %></span>
+            <p><%= books.author %></p>
+            <p><%= books.year %></p>
+            <a href="#!" class="secondary-content waves-effect waves-light btn-small">Comprar</a>
+        </li>
+    <% }); %>
+</ul>

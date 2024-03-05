@@ -1,0 +1,11 @@
+@font-face {
+    font-family: f1;
+    src: url(fonts/f1.ttf);
+    }
+ h1{
+     font-family: f1;
+ }
+ #mostrar{
+     font-family: f1;
+ }
+ 

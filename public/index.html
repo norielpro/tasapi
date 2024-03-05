@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/materialize.css">
+    <link rel="stylesheet" href="css/micss.css">
+    <link rel="stylesheet" href="font/icofont.min.css">
+ 
+     <script src="db.js"></script>
+    <script src="js/materialize.js"></script>
+    <title>Materialito</title>
+</head>
+
+<body onload="verid(),ponerput(),contarElementos()" >
+
+ <script>
+   
+    document.addEventListener('DOMContentLoaded', function() {
+    M.AutoInit();
+    
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.carousel');
+  });
+    var elems = document.querySelectorAll('.sidenav');
+
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.tap-target');
+  
+  });
+function tocar(){
+   var toastHTML = '<span>I am toast content</span><button class="btn-flat toast-action">Save</button>';
+  M.toast({html: toastHTML});
+}
+ </script>
+  <nav>
+  <div class="nav-wrapper  purple darken-3">
+  <a href="#!" class="brand-logo ">Libros</a>
+  <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="icofont-navigation-menu"></i></a>
+
+  </nav>
+  </div>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="#">Sass</a></li>
+    <li><a href="#">Components</a></li>
+    <li><a href="#">Javascript</a></li>
+    <li><a href="#">Mobile</a></li>
+  </ul>
+          
+  <ul id="tabs-swipe-demo" class="tabs tabs-fixed-width tab-demo z-depth-1">
+    <li class="tab col s3"><a class="active" href="#test-swipe-1"><i class="icofont-book " id="ntb"></i></a></li>
+    
+    <li class="tab col s3" ><a href="#test-swipe-3"><i class="icofont-ui-home " id="ntb"></i></a></li>
+   
+    <li class="tab col s3"><a href="#test-swipe-5" ><i class="icofont-plus" id="ntb"></i></a></li>
+  </ul>
+  <div id="test-swipe-1" class="col s12 "> 
+    
+    <div class="row ">
+     
+      <div class="col s12" >
+   
+     <div class="" id="centrado">
+      <div class="chip1">
+        <div class="chip icofont-check" onclick="actualizar()"> Actualizar</div>
+        <div class="chip icofont-search" onclick="mostrarOcultarDiv()"><p id="tbus">Buscar</p> </div>
+      </div>
+             
+     <div class="input-field col s12" id="buscardiv">
+      <input type="search" name="buscar" id="buscar" onkeyup="buscador_interno()" placeholder="Buscar registro..." id="">
+   
+    </div>
+  
+     </div>
+    
+        <table class="centered highlight " id="tabla" >
+          <thead>
+            <tr class="purple lighten-5">
+              <th>Imagen</th>
+                <th>Libros</th>
+                <th>Autores</th>
+                <th>Año</th>
+                <th>Editar</th>
+                <th>Borrar</th>
+            </tr>
+          </thead>
+  
+          <tbody id="mostrar">
+            
+           
+          </tbody>
+        </table>
+  
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="test-swipe-3" class="col s12 ">
+    <div id="principal">
+  
+   
+      <div id="final">
+        <ul class="">
+          <li>
+            <div class="collapsible-header">
+          Registros   
+          
+                  <span class="new badge" data-badge-caption="" id="totalregistros">4</span>
+           
+          </li>
+          <li>
+            <div class="collapsible-header">
+          Total autores
+              <span class="new badge" data-badge-caption="" id="totalautores">4</span>
+         
+          </li>
+        </ul>
+   
+       
+       
+            
+      
+
+      </div>
+    </div>
+  </div>
+
+ 
+
+<div id="test-swipe-5" class="carda ">
+  <div id="centrado">
+    
+
+  <div class="card">
+     <form id="form" method="post" action="/books" enctype="multipart/form-data">
+      <p style="text-align: center;"><b>Nueva Inscripción</b></p>
+      <label for="name">Libro</label>
+      <input type="text" id="name" name="name" placeholder="nombre del Libro" required>
+      <label for="author">Autor</label>
+      <input type="text" id="author" name="author" placeholder="autor del libro"  required>
+       <label for="year">Año</label>
+      <input type="date" id="year" name="year" placeholder="fecha de creado" required>
+      <input type="file"  name="irt">
+      <input id="btn1" type="submit" value="Guardar datos">
+     </form>
+    
+    
+   </div>  
+  </div>
+  <script src="js/sweetalert2.all.js"></script>      
+ <script src="materialito.js"></script>           
+</body>
+</html>
