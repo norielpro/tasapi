@@ -14,7 +14,14 @@ app.use(express.urlencoded({
   extended: true
 }));
 
-
+const readDataM = () => {
+  try {
+    const dataM = fs.readFileSync("./cambio.json");
+    return JSON.parse(dataM);
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 
 const readData = () => {
@@ -33,19 +40,37 @@ const writeData = (data) => {
     console.log(error);
   }
 };
+const writeDataM= (dataM) => {
+  try {
+    fs.writeFileSync("./cambio.json", JSON.stringify(dataM));
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-/*app.post('/books/single', upload.single('irt'), (req, res) => {
-  console.log(req.file);
-  saveImage(req.file);
- res.send(req.file.path);
-});*/
 
+app.get("/tasapai", cors(), (req, res) => {
+  const data = readDataM();
+  res.json(data.tasa);
+});
+app.get("/tasapai/:1", cors(), (req, res) => {
+  const data = readDataM();
+  res.json(data.tasa);
+});
+app.put("/tasapai/:1", (req, res) => {
+  const dataM = readDataM();
+  const body = req.body;
+  dataM.tasa= {
+    ...body,
+  };
+  writeDataM(dataM);
+  res.json({ message: "Tasa cambiada con exito" });
+});
 
 
 app.get("/", (req, res) => {
   res.render("./index.html");
 });
-
 app.get("/books", cors(), (req, res) => {
   const data = readData();
   res.json(data.books);
