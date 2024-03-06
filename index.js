@@ -57,7 +57,7 @@ app.get("/tasapai/:1", cors(), (req, res) => {
   const data = readDataM();
   res.json(data.tasa);
 });
-app.put("/tasapai/:1", (req, res) => {
+app.put("/tasapai/:1", cors(), (req, res) => {
   const dataM = readDataM();
   const body = req.body;
   dataM.tasa= {
